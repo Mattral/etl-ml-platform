@@ -1,13 +1,16 @@
-# A Unified ETL and Machine Learning Automation Platform with Real-Time Monitoring and Experiment Tracking
 
 <div align="center">
+  
+  # ETL & ML Workflow Management System
+
 
 ![Version](https://img.shields.io/badge/version-2.0.0-blue.svg)
 ![Python](https://img.shields.io/badge/python-3.11+-green.svg)
 ![React](https://img.shields.io/badge/react-18+-61DAFB.svg)
 ![License](https://img.shields.io/badge/license-MIT-purple.svg)
 
-**A platform for managing ETL pipelines, tracking ML experiments, and automating model selection with real-time monitoring.**
+> A full-stack platform that unifies ETL pipeline management and ML experiment tracking in a single real-time dashboard. FastAPI backend + React frontend + WebSocket live updates + AutoML with GridSearchCV. Run the whole stack in two terminals.
+
 
 [Features](#-features) • [Architecture](#-architecture) • [Setup](#-setup) • [Usage](#-usage) • [API Reference](#-api-reference)
 
@@ -15,16 +18,21 @@
 
 ---
 
-## 🎯 Why This Project?
+## What problem this solves
 
-In modern data-driven organizations, teams face a common challenge: **the gap between data engineering and machine learning is too wide**. Data engineers build pipelines in one system, ML engineers track experiments in another, and everyone struggles with visibility into what's actually happening.
+Data engineering and ML work typically live in separate tools — Airflow for pipelines, MLflow for experiments, custom scripts for everything else. Context-switching between them creates visibility gaps: nobody knows what's running, what failed, or which model version is linked to which data run.
 
-This project bridges that gap by providing a **unified platform** where:
+This platform puts all of it in one place:
 
-- ETL pipelines and ML experiments live together
-- Real-time monitoring keeps everyone informed
-- AutoML democratizes model selection
-- Quality checks ensure data integrity at every step
+- **ETL pipelines** with step-by-step execution tracking and live status
+- **ML experiments** with per-algorithm metrics, versioned models, and comparison views
+- **AutoML** (GridSearchCV) that runs multi-algorithm searches and registers the best model
+- **Data quality validation** with configurable rules checked at each pipeline step
+- **WebSocket live updates** — every pipeline step, experiment completion, and AutoML progress broadcasts to all connected clients in real time
+
+The screenshots in your README show the real thing. This is a working full-stack app, not a mockup.
+
+---
 
 ### The Problems We Solve
 
@@ -36,39 +44,6 @@ This project bridges that gap by providing a **unified platform** where:
 | **Data quality blindspots** | Issues discovered in production | Integrated validation at every step |
 | **Experiment chaos** | Spreadsheets, notebooks, local files | Centralized experiment tracking |
 
----
-
-## 👥 Who Is This For?
-
-### Primary Users
-
-**🔧 Data Engineers**
-- Build and monitor ETL pipelines
-- Track data quality metrics
-- Debug pipeline failures in real-time
-
-**🧪 ML Engineers**
-- Run experiments with different algorithms
-- Compare model performance across versions
-- Register and version trained models
-
-**📊 Data Scientists**
-- Quickly prototype models with AutoML
-- Focus on problem-solving, not infrastructure
-- Iterate faster with automated hyperparameter tuning
-
-**⚙️ Platform/MLOps Teams**
-- Monitor system health
-- Manage infrastructure at scale
-- Ensure reliability across pipelines
-
-### Use Cases
-
-1. **Startups** building their first ML infrastructure
-2. **Enterprise teams** modernizing legacy ETL systems
-3. **Research teams** needing reproducible experiment tracking
-4. **Consultancies** delivering ML solutions to clients
-5. **Educational institutions** teaching MLOps best practices
 
 ---
 
@@ -252,7 +227,7 @@ This project bridges that gap by providing a **unified platform** where:
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/Mattral/ETL-ML.git
+git clone https://github.com/Mattral/etl-ml-platform ETL-ML
 cd ETL-ML
 
 # 2. Setup Backend
